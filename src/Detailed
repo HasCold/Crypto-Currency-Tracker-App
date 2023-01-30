@@ -1,0 +1,24 @@
+We use React JS, material UI version: 5.11.4 and material UI labs ; Official Docs :- https://v4.mui.com/components/about-the-lab/ 
+
+Install react-router-dom
+
+You can integrate the useStyle components from material UI version 5.11.4 using the docs :-https://mui.com/material-ui/migration/migrating-from-jss/#2-use-tss-react but we haven't use the useStyle component
+
+coingecko API is used website :- https://www.coingecko.com/en/api/documentation ; If any confusion related to this follow the ready-made github reference website:-https://github.com/piyush-eon/react-crypto-tracker/blob/master/src/config/api.js
+
+Also Install axios which is helpful for fetching the end points of API; npm i axios 
+Also Install react-alice-carousel which is helpful for slider; npm i react-alice-carousel; website:- https://www.npmjs.com/package/react-alice-carousel
+
+npm i html-react-parser :- To convert description from html to normal string
+
+npm i react-chartjs-2; the most popular charting library
+
+npm install firebase; Configuration with Firebase
+
+npm i react-google-button; For Google button
+
+npm install --save react-toastify ;
+
+ npm install react-loader-spinner --save
+
+ npm i react-icons

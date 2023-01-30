@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
+.container {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    background-color: black;
+    }
+    
+@media only screen and (max-width: 768px) {
+.container {
+    display: flex;
+    flex-direction: column;
+    align-self: center;   
+    max-width: 100%;     
+}
+
+}
+.sidebar{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+    border-right: 2px solid gray;
+}
+/* .cryptoinfo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+@media (max-width: 768px) {
+    .sidebar{
+        width: 100%;
+    } 
+    /* .cryptoinfo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+    } */
+}
+@media (max-width: 768px) {
+    .description{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    } 
+} 
+.heading{
+    font-weight: bold;
+    margin-bottom: "20px";
+    font-family : Montserrat;
+}
+.marketData{
+    align-self: start;
+    padding: 25px;
+    width: 100%;
+}
+@media (max-width: 960px) {
+    .marketData{
+        display: flex;
+        justify-content: space-around;
+    }
+  }
+
+  @media (max-width: 956px) {
+    .marketData{
+        display: flex;
+        flex-direction: column;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .marketData{
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (max-width: 876px) {
+    .marketData{
+        display: flex;
+        flex-direction: column;
+        text-align: justify;
+    }
+}
+
+  @media (max-width: 600px) {
+    .marketData{
+        flex-direction: column;
+        align-items: center;
+    }
+  }
+  
+  @media (max-width: 0px) {
+    .marketData{
+        align-items: start;
+    }
+  }

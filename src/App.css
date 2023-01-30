@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&display=swap');
+
+*{    /*  * --->> Universal Selector to set a default font for all the elements*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+a{
+  text-decoration: none;
+  color:  gold;
+}
+.App{
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+  position: static;
+}
