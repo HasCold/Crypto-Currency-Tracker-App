@@ -22,3 +22,7 @@ npm install --save react-toastify ;
  npm install react-loader-spinner --save
 
  npm i react-icons
+
+ npm install bootstrap@v5.2.3
+
+ npm i react-bootstrap

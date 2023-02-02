@@ -23,11 +23,13 @@ const parser = input =>
     }
   });
 
-const CoinPage = () => {
+
+const CoinPage = () => {  
+
   const {id} = useParams()
   const [coin, setCoin] = useState()
   const AppCrypto = useContext(Crypto)
-
+  
   const inWatchList = AppCrypto.watchList.includes(coin?.id);
   const addToWatchlist = async () => {
     const coinRef = doc(db, "watchlist", AppCrypto.user.uid);
@@ -166,9 +168,9 @@ useEffect(() => {
          </div>         
       </div>
       {/* chart */}
-      <div style={{display:"flex", flexDirection:"row"}} className="cryptoinfo">
+      {/* <div style={{display:"flex", flexDirection:"row"}} className="cryptoinfo"> */}
       <CoinInfo coin={coin}/>
-      </div>
+      {/* </div> */}
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import { ThemeProvider, createTheme, CircularProgress } from '@mui/material';
 import axios from 'axios';
 import React from 'react'
-import "./CoinInfo.css";
+// import "./CoinInfo.css";
 import { useContext } from 'react';
 import { useState, useEffect } from 'react';
 import { HistoricalChart } from '../../config/api';
@@ -18,8 +18,10 @@ import {
   Legend,
 } from 'chart.js';
 import { chartDays } from '../../config/dataChart';
-import SelectBtn from '../../components/SelectBtn';
-
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import { Container, Row, Col } from 'react-bootstrap'
+import { styled } from '@mui/system';
+import SelectButton from '../../components/SelectButton';
 
 const CoinInfo = ({coin}) => {
     ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
@@ -67,42 +69,69 @@ const CoinInfo = ({coin}) => {
      }
   });
 
+  const useStyles = styled((theme) => ({
+    container2: {
+      width: "100%",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      marginTop: 25,
+      padding: 40,      
+      [theme.breakpoints.down("md")]: {
+        width: "100%",
+        marginTop: 0,
+        padding: 20,
+        paddingTop: 0,
+      },
+    },
+
+}));
+
+  const classes = useStyles();
+
   return (
+
     <ThemeProvider theme={darkTheme}>
-    <div className='container2' 
-    style={{display: "flex", justifyContent: "center", flexDirection:"column", paddingLeft: "20px", marginTop: "30px", width: "68vw"}}
+
+    <div className={classes.container2}
+    style={{display: "flex", justifyContent: "center", flexDirection:"column", paddingLeft: "20px",paddingRight: "20px", marginTop: "30px", width: "100vw"}}
     >
     {/* chart */}
 {!historicalData | flag===false ?( 
+  <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
   <CircularProgress 
-    style={{color: "gold", margin: "auto"}}
+    style={{color: "gold"}}
     size={250}
-  thickness={2}
+    thickness={2}
   />
-  ):(
+</div>  ):(
     <>
     {/* <Line */}
-
     <div 
     // style={{ width: 1100 ,padding: "45px", paddingTop: "65px"}}
-    className="line-chart">
+    >
     <Line  data={data}  options={{
       elements: {
         point: {
-          radius: 2,
+          radius: 1,
         },
       },
     responsive: true,
     maintainAspectRatio: true,
-    }} 
+    }}
+    className={classes.linechart} 
     />
     </div>
     {/* button */}
-    <div style={{display : "flex",paddingBottom: 10, paddingTop: 30,justifyContent: "space-around", width: "100"}} className="chart-Btn">
+    <div 
+    style={{display : "flex", paddingTop: 20,justifyContent: "space-around", width:"100%"}}
+    >
       {chartDays.map((day) => {
         return (
-          <SelectBtn
+          <SelectButton
           key={day.value}
+          // className={classes.chartBtn}
           onClick={() => {setDays(day.value)
             setflag(false);
           }}
@@ -110,7 +139,7 @@ const CoinInfo = ({coin}) => {
           }
           >
             {day.label}
-          </SelectBtn>
+          </SelectButton>
         )
       })}
     </div>
